@@ -121,7 +121,7 @@ if (!$data) {
         $averages[$rowCounter] = $averageScore;
         $dates[$rowCounter] = $date;
         $weeklyAverages[] = $averageScore;
-        $class = 'gradient-score gradient-' . round($averageScore / 10) * 10;
+        $class = 'gradient-score gradient-' . floor($averageScore / 10) * 10;
 
         echo "<td class='{$class}'>";
         echo "<strong>{$date}</strong><br>{$averageScore}";
@@ -134,7 +134,7 @@ if (!$data) {
             $weeklyAvg = array_sum($weeklyAverages) / count($weeklyAverages);
 
             // Echo the weekly average with 2 decimal places
-            echo "<td class='separation gradient-score gradient-" . round($weeklyAvg / 10) * 10 . "'>";
+            echo "<td class='separation gradient-score gradient-" . floor($weeklyAvg / 10) * 10 . "'>";
             echo round($weeklyAvg, 2);
             echo '</td>';
 
@@ -153,7 +153,7 @@ if (!$data) {
     $weeklyAvg = array_sum($weeklyAverages) / count($weeklyAverages);
 
     // Echo the weekly average with 2 decimal places
-    echo "<td class='separation gradient-score gradient-" . round($weeklyAvg / 10) * 10 . "'>";
+    echo "<td class='separation gradient-score gradient-" . floor($weeklyAvg / 10) * 10 . "'>";
     echo round($weeklyAvg, 2);
     echo '</td></tr></table>';
 
